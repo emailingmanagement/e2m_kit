@@ -1,0 +1,82 @@
+html, body  { margin: 0; padding: 0 }
+ul, li { margin: 0; padding: 0; list-style-type: none }
+p { padding: 0 0 .5em; margin: 0 }
+.fl-l { float: left }
+.fl-r { float: right }
+.clear { clear: both }
+a img, :link img, :visited img { border:0; text-decoration: none }
+
+
+/* ------ STRUCTURE ------ */
+#wrapper { width: 900px; margin: 20px auto; overflow: hidden }
+#page { width: 870px; padding: 15px; overflow: hidden }
+#header { margin-bottom: 15px }
+#body { padding: 25px 25px 10px; border: 1px solid #999; background-color: #FFF; overflow: hidden }
+#terms { width: 500px; margin: 10px auto; padding: 15px }
+#terms-wrapper { width: 650px; margin: 20px auto; overflow: hidden }
+#terms-body { margin: 0 12px 12px; padding: 20px 20px 10px; overflow: hidden }
+/* ------ MENU ------ */
+#menu { position: relative; top: 1px; height: 26px; font-size: 1.05em; color: #888; overflow: hidden }
+#menu li { float: left; height: 22px; margin: 0; padding: 4px 25px 0; border-right: 1px solid #999; background: url(../images/menu_off.gif) left top repeat-x }
+#menu li.first { border-left: 1px solid #999 }
+#menu li.selected { background: url(../images/menu_on.gif) left top repeat-x; color: #444; font-weight: bold }
+
+
+/* ------ FORMULAIRE ------ */
+label { float: left; padding: 0 10px 0 0; width: 140px; text-align: right } 
+input[type=text], input[type=password] { padding: 0 4px 2px; font-size: 1em; background-color: #FFF }
+input[type="radio"] { margin: 3px 5px 0 8px }
+.required { color: #BF0B35; font-size: 10px; font-family: Verdana, sans-serif }
+.notification { font-size : .9em; color: #777 }
+.instruction { padding: 0 0 15px 0 }
+/* ----- Error Forms ----- */
+input.required { border: 3px solid #F96; background: #FC9 }
+.error-label { display: block; margin-left: 150px; padding: 1px 0 0 4px; color: #E53446 }
+input[type="text"].error-field, input[type="password"].error-field { border: 2px solid #E53446 }
+select.error-field { border: 2px solid #E53446 }
+.error { margin: 10px 0; padding:15px 15px 15px 40px; background: #F99 url(../images/exclamation.png) 15px 15px no-repeat; border: 3px solid #F66 }
+
+/* ------ Step.1 ------ */
+.step1 .instruction, .step3 .instruction { float: left; width: 200px; margin-right: 20px; line-height: 20px }
+.step1 form { width: 588px }
+.step1 .notification { margin-top: 20px; }
+/* ------ Step.2 ------ */
+.partner { overflow: hidden; border-bottom: 1px solid #BDBDBD; padding-bottom: 25px; margin-bottom: 25px }
+.partner.last { border-bottom: none }
+.partner-logo { float: left; width: 210px; padding-right: 25px; text-align: center }
+.partner-logo img { max-width: 150px }
+.partner-body { float: left; width: 550px }
+.partner-more { margin: 10px 0 0 }
+.partner-more .error-label { margin-left: 0; padding: 1px 0 0 0 }
+
+/* ------ Step.3 ------ */
+.step3 h3 { padding: 0 0 10px 15px; background: url(../images/kr.gif) left top no-repeat }
+.step3 form { width: 498px; padding-left: 100px; }
+.step3 label { width: 85px }
+.step3 .error-label { margin-left: 95px }
+#webmail { margin: 0 0 20px }
+.spinner { float: left; padding: 6px 0 0 15px }
+/* ------ Registration ------ */
+.registration { text-align: center; font-size: 1.1em; font-weight: bold }
+.registration p { padding: 0 0 1.5em }
+.step3 .btn { margin-left: 95px }
+.step2 .btn { margin-left: 235px }
+.step1 .btn { margin-left: 150px }
+#import-contacts .btn { margin-left: 0; float: right }
+
+/* ---------- INVITATION ---------- */
+#import-contacts { overflow: hidden; margin-bottom: 10px }
+#import-contacts h1 { font-size: 1.1em; margin: 5px 0 3px 28px }
+.alphabet-directory { float: left; width: 25px; margin-top: 41px; color: #CCC; font-weight: bold; text-align: center; border: 1px solid #999; border-right: none }
+.alphabet-directory li { padding-bottom: 2px }
+.alphabet-directory li a:hover { padding: 1px 5px; text-decoration: none }
+.address-directory { float: left; width: 470px; margin-bottom: 15px; background-color:#EEEEEE; border: 1px solid #999 }
+
+.import-select-all { height: 20px; padding: 10px; border-bottom: 1px solid #999 }
+.import-email { margin-left: 20px; font-size: .95em; color: #777 }
+.import-selection { float: right; width: 300px }
+.import-selection textarea { width: 288px }
+
+#list-contacts { overflow: auto; padding: 10px; height: 540px; background-color: #FFF }
+#list-contacts h2 { border-bottom: #BDBDBD solid 1px }
+#list-contacts li { margin: 0 0 1em 0; padding-top: 1em; border-top: #BDBDBD solid 1px }

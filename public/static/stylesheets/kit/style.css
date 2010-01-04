@@ -1,0 +1,44 @@
+html, body  { color: #444; background-color: #4F78AE; font-size: 90%; font-family: Trebuchet MS, Tahoma, Arial, sans-serif; line-height: 18px }
+a { color: #4F78AE; text-decoration: none }
+a:hover { color: #4F78AE; text-decoration: underline }
+h1 { margin: 0; padding: 0; font-size: 1.3em; color: #4F78AE; font-weight: bold }
+h2 { margin: 0; padding: 0; font-size: 1.2em; font-weight: bold }
+h3 { margin: 0; padding: 0; font-size: 1em; font-weight: bold }
+h4 { display: block; margin: 0; padding: 10px 0 3px; font-size: 1em; color: #4F78AE; font-weight: bold }
+hr { clear: both; margin: 15px 0; height: 1px; border: 0; color: #BDBDBD; background-color: #BDBDBD }
+.blue { color: #4F78AE }
+
+
+/* ------ STRUCTURE ------ */
+#header { height: 460px; background: url(img/visuel.jpg) top left no-repeat }
+#page, #terms { background: #E9E9E9 url(img/bkg.gif) repeat-x }
+#footer { float: right; padding: 5px 16px; color: #FFF; font-size: .85em }
+#footer a { color: #FFF; text-decoration: underline }
+#footer a:hover { color: #FFF; text-decoration: none }
+#terms-wrapper { background-color: #FFF }
+#terms-body { border: 1px solid #999; background-color: #FFF }
+#terms-header { height: 355px; background: url(img/terms.jpg) top left no-repeat }
+#terms-header img { width: 650px; height: 355px }
+
+
+/* ------ FORMULAIRE ------ */
+input[type=text], input[type=password] { font-family: Trebuchet MS, Arial, sans-serif; border: 1px solid #4F78AE; color: #666 }
+
+.button { float: right; display: block; width: 117px; height: 40px }
+.button.next { background: url(img/valider.png) no-repeat }
+.button.invite { background: url(img/inviter.png) no-repeat }
+.button span { display: none }
+
+/* ------ Step.3 ------ */
+.step3 .instruction h2 { height: 125px; color: #00A906; background: url(img/trefle.png) 65px 40px no-repeat }
+
+
+/* ---------- New input ---------- */
+.btn { float: left; height: 28px; margin: 0; background: transparent url(img/btn_left.png) no-repeat top left }
+.btn span { display: block; background: transparent url(img/btn_right.png) no-repeat top right }
+.btn input { height: 28px; padding: 0 20px 4px 20px; color: #333; border: none; font: normal normal 1em "Trebuchet MS",tahoma,verdana,arial,sans-serif; text-transform: uppercase; background: none; cursor: pointer }
+.btn:hover { background: transparent url(img/btn_left.png) no-repeat bottom left }
+.btn span:hover { background: transparent url(img/btn_right.png) no-repeat bottom right }
+.btn input:hover { padding: 0 20px 2px 20px }
+/* ---------- INVITATION ---------- */
+.alphabet-directory li a:hover { color: #FFF; background-color: #4F78AE }

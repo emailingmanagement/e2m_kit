@@ -1,0 +1,11 @@
+coverage
+doc/api/*
+log/*.log
+tmp/*
+db/schema.rb
+db/*.sqlite3
+config/database.yml
+test/fixtures/*
+.DS_Store
+public/att/*
+extract/*.csv

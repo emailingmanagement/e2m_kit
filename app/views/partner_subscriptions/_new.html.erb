@@ -1,0 +1,11 @@
+<div id="error"></div>
+
+<% remote_form_for :partner_subscriptions, :url => kit_subscription_partner_subscriptions_path(@kit, @subscription), :html => { :id => 'subpart' } do |f| %>
+  <% @kit.partners.each do |part| %>
+    <div id="partner_<%= part.id %>" class="partner<%= ' last' if part == @kit.partners.last %>">
+      <%= render :partial => 'partner_subscriptions/partner', 
+            :locals => { :part => part, :last => (part == @kit.partners.last) } %>
+    </div>
+  <% end %>
+  <%= custom_submit %>
+<% end %>

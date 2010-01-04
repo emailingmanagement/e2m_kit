@@ -1,0 +1,25 @@
+<% 
+extra_field = nil unless local_assigns.has_key? :extra_field
+failed = false unless local_assigns.has_key? :failed
+%>
+<div class="partner-logo"><%= image_tag part.picture.url %></div>
+<div class="partner-body">
+	<h2><%= part.title %></h2>
+	<p><%= part.description %></p>
+  <% onclick = (part.extra_field_name.blank? ? nil : "Element.toggle('partner_#{part.id}_extra_field')") %>
+  <%= radio_button_tag :"partner_#{part.id}_choice", '1', (failed ? true : nil),
+        :onclick => "$('partner_#{part.id}_extra_field').show()" %><%= t(:yes_) %>
+  <%= radio_button_tag :"partner_#{part.id}_choice", '0', (failed ? false : nil),
+        :onclick => "$('partner_#{part.id}_extra_field').hide()" %><%= t(:no_) %>
+  <% unless part.extra_field_name.blank? %>
+    <div id="partner_<%= part.id %>_extra_field" <%= "style='display: none;'" unless failed %>>
+      <div class="partner-more">
+        <%= part.extra_field_name %> <span class="required">*</span> :
+        <%= text_field_tag :"partner_#{part.id}_extra", extra_field, :class => (failed ? 'error-field' : nil) %>
+        <% if failed %>
+          <span class="error-label"><%= t(:partner_subscriptions_required_field) %></span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

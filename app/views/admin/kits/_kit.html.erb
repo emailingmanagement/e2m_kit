@@ -1,0 +1,16 @@
+<div id="kit_<%= kit.id %>">
+  <%= link_to kit.name, kit_path(kit) %> -
+  <%= link_to t(:edit), edit_admin_kit_path(kit) %> -
+  <%= link_to t(:kits_add_partner), new_admin_kit_partner_path(kit) %> -
+  <%= link_to t(:delete), admin_kit_path(kit), :method => :delete, :confirm => t(:are_you_sure) %>
+  <div id="partners_<%= kit.id %>">
+    <ul>
+      <% kit.partners.each do |partner| %>
+        <li>
+          <%= link_to partner.name, edit_admin_kit_partner_path(kit, partner) %> -
+          <%= link_to t(:delete), admin_kit_partner_path(kit, partner), :method => :delete, :confirm => t(:are_you_sure) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

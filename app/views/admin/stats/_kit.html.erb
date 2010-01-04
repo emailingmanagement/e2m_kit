@@ -1,0 +1,57 @@
+<h2><%= kit.name %></h2>
+
+<p>
+  <label><%= t(:stats_subscriptions_count) %></label> :
+  <%= kit.subscriptions.count %>
+</p>
+
+<p>
+  <label><%= t(:stats_invites_count) %></label> :
+  <%= kit.contacts.count(:conditions => { :invite_sent => true }) %>
+</p>
+
+<p>
+  <label><%= t(:stats_invites_rate) %></label> :
+  <%= number_to_percentage(kit.invites_rate) %>
+</p>
+
+<p>
+  <label><%= t(:stats_subscriptions_countries) %></label> :
+  <ul>
+    <% kit.subscriptions_countries.each do |country, count| %>
+      <li><%= country %> : <%= count %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <label><%= t(:stats_invites_domains) %></label> :
+  <ul>
+    <% kit.invites_domains.each do |domain, count| %>
+      <li><%= domain %> : <%= count %></li>
+    <% end %>
+  </ul>
+</p>
+
+<% unless kit.partners.empty? %>
+  <p>
+    <label><%= t(:stats_partners_subscriptions) %></label> :
+    <ul>
+      <% kit.partners_subscriptions.each do |partner, count| %>
+        <li><%= partner.name %> : <%= count %></li>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
+
+<% unless kit.sources.empty? %>
+  <p>
+    <label><%= t(:stats_sources) %></label> :
+    <ul>
+      <% kit.sources_subscriptions.each do |source, count| %>
+        <li><%= source.name %>(<%= kit_url(kit, :s => source.id) %>) : <%= count %></li>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
+<hr/>

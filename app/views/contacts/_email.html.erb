@@ -1,0 +1,12 @@
+<%
+failed = false unless local_assigns.has_key? :failed
+email = nil unless local_assigns.has_key? :email
+%>
+
+<p>
+	<label for="Email1"><%= t(:contacts_email, :number => num) %> :</label>
+  <%= text_field_tag :"email_#{num}", email, :class => (failed ? 'error-field' : nil) %>
+<% if failed %>
+  <span class="error-label"><%= t(:contacts_invalid_email) %></span>
+<% end %>
+</p>

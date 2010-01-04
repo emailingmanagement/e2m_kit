@@ -1,0 +1,10 @@
+<% remote_form_for :contacts, :url => kit_subscription_contacts_path(@kit, @subscription) do %>
+	<h3><%= t(:contacts_emails) %></h3>
+	
+  <% 1.upto(4) do |i| %>
+    <div id="contact_email_<%= i %>">
+    	<%= render :partial => 'contacts/email', :locals => { :num => i } %>
+    </div>
+  <% end %>
+  <%= custom_submit t(:invite) %>
+<% end %>

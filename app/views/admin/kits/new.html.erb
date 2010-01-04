@@ -1,0 +1,4 @@
+<h2><%= t(:kits_new) %></h2>
+<% form_for @kit, :url => admin_kits_path, :html => { :multipart => true } do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end %>

@@ -1,0 +1,288 @@
+fr:
+    # generic
+    log_in: "Connexion"
+    logout: "Déconnexion"
+    are_you_sure: "Êtes-vous sûr?"
+    validate: "Valider"
+    import: "Importer"
+    invite: "Inviter"
+    delete: "Supprimer"
+    edit: "Modifier"
+    yes_: "Oui"
+    no_: "Non"
+    
+    user_sessions_auth_failed_flash: "Email et/ou mot de passe incorrects."
+    user_sessions_destroy_flash: "Vous avez été déconnecté(e)."
+    user_sessions_user_must_be_logged_flash: "Vous devez être connecté(e)."
+    user_sessions_user_must_not_be_logged_flash: "Vous devez être déconnecté(e)."
+    
+    kits: "Kits"
+    kits_new: "Nouveau kit"
+    kits_kit_step_1: "1. Participez"
+    kits_kit_step_2_partners: "2. Offres exclusives"
+    kits_kit_step_3_invite: "3. Invitez"
+    kits_kit_step_2_invite: "2. Invitez"
+    kits_add_partner: "Ajouter un partenaire"
+    kits_kit_created_flash: "Le kit a été créé."
+    kits_kit_updated_flash: "Le kit a été mis à jour."
+    kits_kit_destroyed_flash: "Le kit a été supprimé."
+    kits_kit_type_information: "Saisissez vos coordonées"
+    kits_kit_introduction: "Si vous êtes l'heureux gagnant, ces informations nous permettrons de vous faire parvenir votre cadeau."
+    kits_kit_fields_required: "Champs obligatoires"
+    kits_kit_read_rules: "Lire le réglement"
+
+    stats: "Statistiques"
+    stats_subscriptions_count: "Nombre d'inscriptions"
+    stats_invites_count: "Nombre d'invitations"
+    stats_invites_rate: "Taux de transformation des invitations"
+    stats_subscriptions_countries: "Répartition des inscriptions par pays"
+    stats_invites_domains: "Répartition des invitations par nom de domaine"
+    stats_partners_subscriptions: "Répartition de la coregistration"
+    stats_sources: "Répartition par source"
+
+    partners: "Partenaires"
+    partners_new: "Nouveau partenaire"
+    partners_partner_created_flash: "Le partenaire a été ajouté."
+    partners_partner_updated_flash: "Le partenaire a été mis à jour."
+    partners_partner_destroyed_flash: "Le partenaire a été supprimé."
+
+    partner_subscriptions_instruction_title: "{{kit_name}} souhaite vous faire profiter des offres exclusives de ses partenaires"
+    partner_subscriptions_instruction: "Lorsque vous sélectionnez &laquo; Oui &raquo; dans une ou plusieurs annonces de nos partenaires, vous autorisez à ce que vos informations<br> leurs soient transmises."
+    partner_subscriptions_required_field: "Ce champ est obligatoire"
+    partner_subscriptions_checkboxes_must_be_checked: "Vous devez cocher les cases"
+    
+    contact: "contact"
+    contacts_select: "Sélectionne les amis que tu souhaites inviter"
+    contacts_select_all: "Tout sélectionner"
+    contacts_instructions_title: "Multipliez vos chances d'être tiré au sort en invitant vos amis à participer au grand jeu concours."
+    contacts_instructions_title2: "Autant de chance de gagner que d'amis<br>inscrits."
+    contacts_import: "En important vos contacts de votre messagerie"
+    contacts_import_email: "Email"
+    contacts_import_password: "Mot de passe"
+    contacts_emails: "En saisissant leurs emails ci-dessous"
+    contacts_email: "Email {{number}}"
+    contacts_invalid_email: "L'email n'est pas valide."
+    
+    contacts_import_login_password_required_flash: "L'email et le mot de passe sont requis."
+    contacts_import_login_password_invalid_flash: "Le mot de passe pour le compte {{account}} est incorrect."
+    contacts_import_login_account_no_contacts: "Aucun contact n'est enregistré pour le compte {{account}}."
+    contacts_congrats: "Félicitation ! Vous êtes inscrit au Grand Jeu Concours {{kit_name}} !"
+    contacts_winners_alerted: "Les gagnants seront prévenus par email."
+    
+    
+    mailer_emailing_subject: "Jeu concours {{kit_name}}"
+    mailer_confirmation_subject: "Inscription {{kit_name}}"
+    mailer_invite_subject: "Invitation {{kit_name}}"
+    
+    # framework
+    date:
+      formats:
+        default: "%d/%m/%Y"
+        comment: "%d.%m.%Y"
+        short: "%e %b"
+        long: "%e %B %Y"
+        long_ordinal: "%e %B %Y"
+        only_day: "%e"
+        event_long: "Le %A %e %B"
+        event_long_agenda: "%A %e %B %Y"
+        timeline: "%a %d/%m"
+
+      day_names: [dimanche, lundi, mardi, mercredi, jeudi, vendredi, samedi]
+      abbr_day_names: [dim, lun, mar, mer, jeu, ven, sam]
+      month_names: [~, janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre]
+      abbr_month_names: [~, jan., fév., mar., avr., mai, juin, juil., août, sept., oct., nov., déc.]
+      order: [ :day, :month, :year ]
+      include_blank_option_name_year: "aaaa"
+      include_blank_option_name_month: "mm"
+      include_blank_option_name_day: "jj"
+
+    time:
+      formats:
+        default: "Le %d %B %Y à %H:%M"
+        time: "%H:%M"
+        short: "%d %b %H:%M"
+        long: "%A %d %B %Y %H:%M:%S %Z"
+        long_ordinal: "%A %d %B %Y %H:%M:%S %Z"
+        only_second: "%S"
+        sold_ticket: "%e %B %Y / %H:%M"
+        event_short: "%d/%m / %Hh%M"
+      am: 'am'
+      pm: 'pm'
+
+    datetime:
+      distance_in_words:
+        half_a_minute: "une demi-minute"
+        less_than_x_seconds:
+          zero: "moins d'une seconde"
+          one: "moins de 1 seconde"
+          other: "moins de {{count}} secondes"
+        x_seconds:
+          one: "1 seconde"
+          other: "{{count}} secondes"
+        less_than_x_minutes:
+          zero: "moins d'une minute"
+          one: "moins de 1 minute"
+          other: "moins de {{count}} minutes"
+        x_minutes:
+          one: "1 minute"
+          other: "{{count}} minutes"
+        about_x_hours:
+          one: "environ une heure"
+          other: "environ {{count}} heures"
+        x_days:
+          one: "1 jour"
+          other: "{{count}} jours"
+        about_x_months:
+          one: "environ un mois"
+          other: "environ {{count}} mois"
+        x_months:
+          one: "1 mois"
+          other: "{{count}} mois"
+        about_x_years:
+          one: "environ un an"
+          other: "environ {{count}} ans"
+        over_x_years:
+          one: "plus d'un an"
+          other: "plus de {{count}} ans"
+      prompts:
+        year: "Année"
+        month: "Mois"
+        day: "Jour"
+        hour: "Heure"
+        minute: "Minute"
+        second: "Seconde"
+
+    number:
+      format:
+        precision: 2
+        separator: ','
+        delimiter: ' '
+      currency:
+        format:
+          unit: '€'
+          precision: 2
+          format: '%n %u'
+      human:
+        format:
+          precision: 2
+        storage_units: [ Octet, ko, Mo, Go, To ]
+
+    support:
+      array:
+        sentence_connector: 'et'
+        skip_last_comma: true
+        word_connector: ", "
+        two_words_connector: " et "
+        last_word_connector: " et "
+    
+    activerecord:
+        models:
+            user: "Utilisateur"
+        attributes:
+            user:
+              login: 'Pseudo'
+              email: 'Email'
+              password: 'Mot de passe'
+              password_confirmation: 'Confirmation du mot de passe'
+              first_name: 'Prénom'
+              last_name: 'Nom'
+              login_count: 'Nb connexions'
+              last_login_at: 'Dernière connexion'
+            kit:
+              rules: "Réglement"
+              lang: "Langue"
+              lang_list:
+                  fr: "Français"
+                  es: "Espagnol"
+              title: "Titre"
+              name: "Nom"
+              picture: "Image"
+              finished_at: "Date de fin"
+              default_country: "Pays par défaut"
+            partner:
+               name: "Nom"
+               title: "Titre"
+               extra_field_name: "Champ supplémentaire"
+               description: "Description"
+               picture: "Image"
+            subscription:
+               email: "Email"
+               first_name: "Prénom"
+               last_name: "Nom"
+               region: "Région"
+               city: "Ville"
+               country: "Pays"
+               occupation: "Profession"
+               occupation_list:
+                   01_students: "Etudiant"
+                   02_executives: "Cadre"
+                   03_executives2: "Cadre supérieur / Gérant"
+                   04_secretary: "Secrétaire"
+                   05_employee: "Employé"
+                   06_pensioner: "Retraité"
+                   07_freelance: "Profession libérale / Autonome"
+                   08_housewife: "Femme au foyer"
+               date_of_birth: "Date de naissance"
+               civility: "Civilité"
+               civility_list:
+                   01_miss: "Mlle"
+                   02_madam: "Mme"
+                   03_mister: "Mr"
+               email1_picture: "Image emails 1&3"
+               email2_picture: "Image emails 2"
+        errors:
+            template:
+              header:
+                one: "Impossible d'enregistrer {{model}}: 1 erreur"
+                other: "Impossible d'enregistrer {{model}}: {{count}} erreurs."
+              body: "Veuillez vérifier les champs suivants :"
+            messages:
+              inclusion: "n'est pas inclus(e) dans la liste"
+              exclusion: "n'est pas disponible"
+              invalid: "n'est pas valide"
+              confirmation: "ne concorde pas avec la confirmation"
+              accepted: "doit être accepté(e)"
+              empty: "doit être rempli(e)"
+              blank: "doit être rempli(e)"
+              too_long: "est trop long (pas plus de {{count}} caractères)"
+              too_short: "est trop court (au moins {{count}} caractères)"
+              wrong_length: "ne fait pas la bonne longueur (doit comporter {{count}} caractères)"
+              taken: "n'est pas disponible"
+              not_a_number: "n'est pas un nombre"
+              greater_than: "doit être supérieur à {{count}}"
+              greater_than_or_equal_to: "doit être supérieur ou égal à {{count}}"
+              equal_to: "doit être égal à {{count}}"
+              less_than: "doit être inférieur à {{count}}"
+              less_than_or_equal_to: "doit être inférieur ou égal à {{count}}"
+              odd: "doit être impair"
+              even: "doit être pair"
+              on_or_before: "doit être antérieure ou égale au {{restriction}}"
+              on_or_after:  "doit être postérieure ou égale au {{restriction}}"
+              between: "doit être entre {{earliest}} et {{latest}}"
+              invalid_date: "n'est pas une date valide"
+              invalid_time: "n'est pas une heure valide"
+              invalid_datetime: "n'est pas une date valide"
+              before: "doit être antérieure au {{restriction}}"
+              after: "doit être postérieure au {{restriction}}"
+              record_invalid: "informations invalides"
+            subscription:
+              taken: "cet email est déjà inscrit"
+    authlogic:
+      error_messages:
+        login_blank: "est obligatoire"
+        login_not_found: "n'existe pas"
+        login_invalid: "ne peut contenir que des lettres, nombres et .-_@."
+        consecutive_failed_logins_limit_exceeded: "Le compte est désactivé suite à un trop grand nombre d'erreur de connexion."
+        email_invalid: "ne correspond pas à une adresse valide"
+        password_blank: "est obligatoire"
+        password_invalid: "est incorrect"
+        not_active: "Votre compte n'est pas activé"
+        not_confirmed: "Votre compte n'a pas été validé"
+        not_approved: "Votre compte a été refusé"
+        blank_record: "Connexion impossible"
+        new_record: "Connexion impossible"
+    parperclip:
+      error_messages:
+        content_type_invalid: "Le type de fichier est incorrect"
+        size_invalid: "La taille limite est de {{size}}ko"
+        validate_presence: "doit être spécifié."

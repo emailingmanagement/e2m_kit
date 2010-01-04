@@ -1,0 +1,9 @@
+<ul>
+  <li class="first<%= " selected" if @step == 1 %>"><%= t(:kits_kit_step_1) %></li>
+  <% unless @kit.partners.empty? %>
+    <li class="<%= " selected" if @step == 2 %>"><%= t(:kits_kit_step_2_partners) %></li>
+    <li class="<%= " selected" if @step == 3 %>"><%= t(:kits_kit_step_3_invite) %></li>
+  <% else %>
+    <li class="<%= " selected" if @step == 2 %>"><%= t(:kits_kit_step_2_invite) %></li>
+  <% end %>
+</ul>

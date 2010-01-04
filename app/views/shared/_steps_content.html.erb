@@ -1,0 +1,25 @@
+<div id="body" class="step<%= @step == 2 && @kit.partners.empty? ? 3 : @step %>">
+  <% case @step
+  when 1 %>
+    <div class="instruction fl-l">
+    	<h1><%= t(:kits_kit_type_information) %></h1>
+    	<p><%= t(:kits_kit_introduction) %></p>
+    	<p class="notification"><span class="required">*</span> <%= t(:kits_kit_fields_required) %></p>
+    </div>
+    <div id="subscription">
+      <%= render :partial => 'subscriptions/new' %>
+    </div>
+  <% when 2 %>
+    <% unless @kit.partners.blank? %>
+      <div class="instruction">
+    		<h1><%= t(:partner_subscriptions_instruction_title, :kit_name => @kit.name) %></h1>
+    		<strong><%= t(:partner_subscriptions_instruction) %></strong>
+    	</div>
+      <%= render :partial => 'partner_subscriptions/new' %>
+    <% else %>
+      <%= render :partial => 'contacts/new' %>
+    <% end %>
+  <% when 3 %>
+    <%= render :partial => 'contacts/new' %>
+  <% end %>
+</div>

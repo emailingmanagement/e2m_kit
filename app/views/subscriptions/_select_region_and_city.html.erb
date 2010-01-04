@@ -1,0 +1,22 @@
+<% fields_for :subscription, @subscription do |f| %>
+  <% case @subscription.country
+  when 'MA' %>
+    <p>
+      <%= custom_label_tag f, :region, :required => true %>
+      <%= f.select :region, ['Agadir', 'Anfa', 'Casablanca', 'Chella', 'El Jadida', 'Fès', 'Kénitra', 'Laâyoune', 'Marrakech', 'Meknès', 'Mellilia', 'Mohammedia', 'Oualili', 'Oujda', 'Rabat', 'Salé', 'Sebta', 'Tanger', 'Taroudant', 'Tétouan' ] %>
+    </p>
+    <p>
+      <%= custom_label_tag f, :city, :required => true %>
+      <%= f.select :city, ["Agadir", "Aglou", "Ahfir", "Al hoceima", "Arouit", "Asilah", "Azrou", "Ben ahmed", "Berkane", "Berrechid", "Boubeker", "Boufekrane", "Boujdour", "Casablanca", "Chefchaouen", "Dakhla", "El jadida", "Essaouira", "FÈs", "Goulimime", "Goulmina", "Ifrane", "Inezgane", "Jerada", "Jorf el melha", "KÉnitra", "Khouribga", "Marrakech", "MeknÈs", "Midelt", "Mirleft", "Nador", "Ouaoumana", "Ouarzazate", "Oued el heimer", "Ouezzane", "Oujda", "Ouzoud", "Rabat", "Safi", "Saidia", "SalÉ", "Sefrou", "Settat", "Sidi ifni", "Tafilalet", "Taforalt", "Tafraoute", "Taghazout", "Tagounite", "Tanger", "Taroudant", "Taza", "Temara", "TÉnÈs", "TÉtouan", "Timiderte", "Tineghir", "Tiznit", "Touissit", "VallÉe du drÂa", "Zagora"] %>
+    </p>
+  <% else %>
+      <p>
+        <%= custom_label_tag f, :region, :required => true %>
+        <%= f.text_field :region %>
+      </p>
+      <p>
+        <%= custom_label_tag f, :city, :required => true %>
+        <%= f.text_field :city %>
+      </p>
+  <% end %>
+<% end %>

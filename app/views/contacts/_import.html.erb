@@ -1,0 +1,38 @@
+
+<% remote_form_for :webmail, :url => import_kit_subscription_contacts_path(@kit, @subscription),
+    :before => "$('loading').show()", :loaded => "$('loading').hide()" do %>
+  <h3><%= t(:contacts_import) %></h3>
+  <div id="webmail">
+  	<img alt="Msn" src="/images/msn.gif">
+  	<img alt="Windows" src="/images/windows.gif">
+  	<img alt="Yahoo" src="/images/yahoo.gif">
+  	<img alt="Gmail" src="/images/gmail.gif">
+  	<img alt="Aol" src="/images/aol.gif">
+  </div>
+
+  <div id="flash_import"></div>
+
+  <p>
+    <label><%= t(:contacts_import_email) %> <span class="required">*</span></label>
+    <%= text_field_tag :account %> @
+		<select id="account_domain" name="account_domain">
+		  <option value="gmail.com">gmail.com</option>
+			<option value="hotmail.com">hotmail.com</option>
+      <option value="hotmail.fr">hotmail.fr</option>
+			<option value="live.com">live.com</option>
+			<option value="live.fr">live.fr</option>
+			<option value="yahoo.com">yahoo.com</option>
+      <option value="yahoo.fr">yahoo.fr</option>
+			<option value="aol.com">aol.com</option>
+			<option value="aim.com">aim.com</option></select>
+	</p>
+	<p>
+		<label for="password"><%= t(:contacts_import_password) %></label>
+    <%= password_field_tag :password %>
+	</p>
+	
+  <%= custom_submit t(:import), :class => "fl-l" %>
+  <div id="loading" class="spinner" style="display: none;">
+		<img alt="Spinner" src="/images/spinner.gif">
+	</div>
+<% end %>

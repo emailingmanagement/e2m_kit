@@ -1,0 +1,58 @@
+<% remote_form_for @subscription, :url => kit_subscriptions_path(@kit), :html => { :class => 'fl-l' } do |f| %>
+  <%= honeypot %>
+  <p>
+    <%= custom_label_tag f, :email, :required => true %>
+    <%= f.text_field :email %>
+  </p>
+  
+  <p>
+    <%= custom_label_tag f, :civility, :required => true %>
+    <%= f.radio_button :civility, '01_miss' %><%= t('activerecord.attributes.subscription.civility_list.01_miss') %>
+    <%= f.radio_button :civility, '02_madam' %><%= t('activerecord.attributes.subscription.civility_list.02_madam') %>
+    <%= f.radio_button :civility, '03_mister' %><%= t('activerecord.attributes.subscription.civility_list.03_mister') %>
+    <%= (error_message_on "subscription", "civility", :css_class => "error-label").gsub(/div/, 'span') %>
+  </p>
+  
+  <p>
+    <%= custom_label_tag f, :last_name, :required => true %>
+    <%= f.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= custom_label_tag f, :first_name, :required => true %>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= custom_label_tag f, :date_of_birth, :required => true %>
+    <%= f.date_select(:date_of_birth, :start_year => 1940, :end_year => Time.zone.now.to_date.year - 18, :reverse_year => true, 
+          :prompt => {
+            :day => t('date.include_blank_option_name_day'), :month => t('date.include_blank_option_name_month'), 
+            :year => t('date.include_blank_option_name_year')
+        }) %>
+  </p>
+  
+  <p>
+    <%= custom_label_tag f, :occupation, :required => true %>
+    <%= f.select(:occupation, label_keys('activerecord.attributes.subscription.occupation_list')) %>
+  </p>
+
+	<p>
+	  <%= custom_label_tag f, :country, :required => true %>
+    <%= f.select(:country, I18nData.countries(I18n.locale).map { |k, v| [v, k] }.sort {|x,y| x[0] <=> y[0] }, {},
+                  :onchange =>
+                    remote_function(:with => "'country_code=' + $('subscription_country').value",
+                      :url => select_region_and_city_kit_subscriptions_path(@kit),
+                      :method => 'get'
+                    )
+        ) %>
+	</p>
+
+	<div id="select_region_and_city">
+	  <%= render :partial => 'subscriptions/select_region_and_city' %>
+	</div>
+
+  <br/>
+  
+  <%= custom_submit %>
+<% end %>

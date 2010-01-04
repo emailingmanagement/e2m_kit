@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title><%= @kit.title %></title>
+    <%= stylesheet_link_tag 'main' %>
+    <%= stylesheet_link_tag @kit.css.url %>
+    <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/ie.css" /><![endif]-->
+  	<!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/ie6.css" /><![endif]-->
+  	
+    <%= javascript_include_tag :defaults %>
+  </head>
+  <body>
+    <div id="wrapper">
+    	<div id="page">
+        <div id="header">&nbsp;</div>
+        <div id="menu">
+          <%= render 'shared/steps' %>
+    		</div>
+        <%= yield %>
+      </div>
+      <div id="footer">
+        <% unless @kit.rules.blank? %>
+      		<a href="#" onClick="window.open('<%= rules_kit_path(@kit) %>','_blank','toolbar=0, location=0, directories=0, status=0, scrollbars=1, resizable=0, copyhistory=0, menuBar=0, width=580, height=500');return(false)" style="cursor:hand">
+      		  <%= t(:kits_kit_read_rules) %>
+      		</a> |
+      	<% end %>
+        <%# Dev by <a href="http://agiliweb.com">agiliweb</a>%>
+    	</div>
+    </div>
+  </body>    
+</html>

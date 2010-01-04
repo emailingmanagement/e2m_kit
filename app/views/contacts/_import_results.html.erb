@@ -1,0 +1,48 @@
+<% remote_form_for :contacts, :url => kit_subscription_contacts_path(@kit, @subscription) do %>
+  <%= hidden_field_tag :webmail, 1 %>
+  <div id="import-contacts" class="clear">
+  	<h1><%= t(:contacts_select) %></h1>
+
+  	<div class="alphabet-directory">
+  	  <% 
+  	  all_letters = %w(#) + ('A'..'Z').to_a
+  	  h_letters_contacts = @contacts.inject({}) do |h, c|
+  	    l = remove_accent(c.name.first).upcase
+  	    h[l] ||= []
+  	    if all_letters.include?(l)
+  	      h[l] << c
+  	    else
+  	      h['#'] ||= []
+  	      h['#'] << c
+        end
+        h
+      end %>
+  		<ul>
+  		  <% all_letters.each do |l| %>
+          <li><%= h_letters_contacts[l].blank? ? l : link_to(l, "#letter_#{l}") %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="address-directory">
+      <div class="import-select-all">
+  			<span class="fl-l"><%= check_box_tag :select_all, 1, true, :onclick => "select_all_contacts();" %><%= t(:contacts_select_all) %></span>
+  			<span class="fl-r"><%= pluralize(@contacts.size, t(:contact)) %></span>
+  		</div>
+  		<div id="list-contacts">
+  		  <% h_letters_contacts.keys.sort.each do |l| %>
+  	      <h2 id="letter_<%= l %>"><%= l %></h2>
+  	      <ul class="alpha-list">
+  	        <% h_letters_contacts[l].sort { |x, y| x.name <=> y.name }.each do |c| %>
+  	          <li>
+    	          <%= check_box_tag :"contact_#{c.id}", 1, true, :class => :contact_selected, :onclick => 'unckeck_select_all(this)' %>
+    	          <%= c.name %><br />
+    	          <span class="import-email"><%= c.email %></span><br/>
+    	        </li>
+  	        <% end %>
+  	      </ul>
+  		  <% end %>
+      </div>
+  	</div>
+  </div>
+  <%= custom_submit t(:invite) %>
+<% end %>

@@ -1,0 +1,65 @@
+<p>
+  <%= f.label(:name) %>
+  <%= f.text_field(:name) %>
+</p>
+
+<p>
+  <%= f.label(:title) %>
+  <%= f.text_field(:title) %>
+</p>
+
+<p>
+  <%= f.label(:lang) %>
+  <%= f.select(:lang, label_keys('activerecord.attributes.kit.lang_list')) %>
+</p>
+
+<p>
+  <%= f.label(:default_country) %>
+  <%= f.select(:default_country, I18nData.countries(I18n.locale).map { |k, v| [v, k] }.sort {|x,y| x[0] <=> y[0] }) %>
+</p>
+
+<p>
+  <%= f.label(:finished_at) %>
+  <%= f.date_select(:finished_at, :start_year => Date.today.year, :default => 1.year.since) %>
+</p>
+
+<p>
+  <%= f.label(:rules) %>
+  <%= f.text_area(:rules) %>
+</p>
+
+<p>
+  <%= f.label(:css) %>
+  <%= f.file_field(:css) %>
+  <% if @kit.css.file? %>
+    <%= link_to @kit.css_file_name, @kit.css.url %>
+  <% end %>
+</p>
+
+<% 1.upto(10) do |i| %>
+  <p>
+    <label><%= i %></label>
+    <%= file_field_tag "css_picture#{i}" %>
+    <% if @kit.css_pictures[i].try(:picture) %>
+      <%= link_to @kit.css_pictures[i].picture_file_name, @kit.css_pictures[i].picture.url %>
+    <% end %>
+  </p>
+<% end %>
+
+<p>
+  <%= f.label(:email1_picture) %>
+  <%= f.file_field(:email1_picture) %>
+  <% if @kit.email1_picture.file? %>
+    <%= link_to @kit.email1_picture_file_name, @kit.email1_picture.url %>
+  <% end %>
+</p>
+
+<p>
+  <%= f.label(:email2_picture) %>
+  <%= f.file_field(:email2_picture) %>
+  <% if @kit.email2_picture.file? %>
+    <%= link_to @kit.email2_picture_file_name, @kit.email2_picture.url %>
+  <% end %>
+</p>
+
+<%= f.submit t(:validate) %>

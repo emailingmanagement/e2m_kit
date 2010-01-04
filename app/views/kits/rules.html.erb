@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><%= Kit.human_attribute_name('rules') %> <%= @kit.name %></title>
+    <%= stylesheet_link_tag 'main' %>
+    <%= stylesheet_link_tag @kit.css.url %>
+    <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/ie.css" /><![endif]-->
+    <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/ie6.css" /><![endif]-->
+  </head>
+
+  <body>
+    <% if @email %>  
+      <div id="terms-wrapper">
+      	<div id="terms-header">
+      		<a href="<%= kit_path(@kit) %>"><img src="images/spacer.gif"></a>
+      	</div>
+      	<div id="terms-body">
+  	  <% else %>
+    	  <div id="terms">
+        	<div id="body">
+  	  <% end %>
+  	        <%= @kit.rules %>
+          </div>
+        </div>
+  </body>
+</html>

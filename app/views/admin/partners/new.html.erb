@@ -1,0 +1,4 @@
+<h2><%= t(:partners_new) %></h2>
+<% form_for @partner, :url => admin_kit_partners_path(@kit), :html => { :multipart => true } do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end %>
